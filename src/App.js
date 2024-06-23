@@ -19,7 +19,7 @@ export default class App extends Component {
 apiKey = "fb23cbe1cd074df997a342581989f4e6";
 
 
-static defautProps={
+static defaultProps={
   country:'in',
   pageSize:5,
   category:'science',
