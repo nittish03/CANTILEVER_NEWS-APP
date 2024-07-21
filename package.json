@@ -16,7 +16,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,7 +40,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "babel-preset-react-app":"@babel/plugin-proposal-private-property-in-object"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^6.1.1"
   }
 }
