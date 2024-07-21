@@ -1,3 +1,17 @@
+to start the react app.... firstly create the build version of the app by writing the command
+npm run build
+also start the node server in the node-server folder
+to start the server write the command
+nodemon index.js or node index.js in node-server folder
+after that run the command 
+ serve -s build
+
+ and the react app starts
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
