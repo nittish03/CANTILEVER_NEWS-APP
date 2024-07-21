@@ -1,7 +1,9 @@
 const express = require("express");
+const app = express();
 const cors = require ('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+app.use(cors());
 const DB= 'mongodb://127.0.0.1:27017/test';
 main().catch(err => console.log(err));
 
@@ -17,14 +19,12 @@ const userSchema = new mongoose.Schema({
 
   const User = mongoose.model('User', userSchema);
 
-const server = express();
 const port = 3080;
 
-server.use(cors());
-server.use(bodyParser.json());
+app.use(bodyParser.json());
 
 
-server.post("/",async (req, res) => {
+app.post("/",async (req, res) => {
     let user = new User();
     user.username = req.body.mail;
     user.password = req.body.password;
@@ -33,12 +33,12 @@ server.post("/",async (req, res) => {
     res.json(doc);
 });
 
-server.get('/', async (req, res) => {
+app.get('/', async (req, res) => {
 const docs= await User.find({});
 res.json(docs);
 })
 
 
-server.listen(port , () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(port , () => {
+    console.log(`server is running on port ${port}`);
 })
